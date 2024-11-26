@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+/* Reset e estilo geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Kumbh Sans', sans-serif;
+  background: linear-gradient(135deg, #1a1a1a, #333333);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #ffffff;
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faq {
+  background-color: #000;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  padding: 30px;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.faq .ilustracao {
+  width: 50%;
+  max-width: 250px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.5));
+}
+
+.faq .conteudo {
+  width: 100%;
+}
+
+.faq h1 {
+  color: #ff7b00;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.item {
+  list-style: none;
+  width: 100%;
+}
+
+.itens {
+  border-bottom: 1px solid #ff7b00;
+  padding: 15px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.itens:last-child {
+  border-bottom: none;
+}
+
+.itens:hover,
+.itens:focus {
+  background-color: #ff7b00;
+  color: #000;
+  border-radius: 8px;
+}
+
+.itens:focus {
+  outline: 2px solid #ffcc33;
+  outline-offset: 4px;
+}
+
+.itens .pergunta {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffcc33;
+  transition: color 0.3s;
+}
+
+.itens:hover .pergunta {
+  color: #000;
+}
+
+.itens .resposta {
+  display: none;
+  color: #cccccc;
+  font-size: 16px;
+  margin-top: 10px;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.itens.ativo .resposta {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efeitos de responsividade */
+@media (max-width: 768px) {
+  .faq {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .faq .ilustracao {
+    width: 70%;
+  }
+
+  .faq h1 {
+    font-size: 24px;
+  }
+
+  .itens .pergunta {
+    font-size: 16px;
+  }
+
+  .itens .resposta {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 425px) {
+  .faq {
+    width: 100%;
+  }
+
+  .faq h1 {
+    font-size: 20px;
+  }
+
+  .itens .pergunta {
+    font-size: 14px;
+  }
+
+  .itens .resposta {
+    font-size: 12px;
+  }
+}
